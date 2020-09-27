@@ -1,4 +1,4 @@
-function CN3121proj
+function CN3121Project1
 
 %%b)
 
@@ -10,21 +10,21 @@ timeperiod = 0:0.1:200; y0 = [3.48603 0.716788 5.08040];
 
 figure (1)
 hold off
-plot(t,y13(:,1) - y0(1)), title('Step change in Cm+30% step change in blue, -30% step change in red')
+plot(t,y13(:,1)), title('Step change in Cm+30% step change in blue, -30% step change in red')
 hold on
-plot(t,y07(:,1) - y0(1))
+plot(t,y07(:,1))
 
 figure(2)
 hold off
-plot(t,y13(:,2) - y0(2)), title('Step change in Ce+30% step change in blue, -30% step change in red')
+plot(t,y13(:,2)), title('Step change in Ce+30% step change in blue, -30% step change in red')
 hold on
-plot(t,y07(:,2) - y0(2))
+plot(t,y07(:,2))
 
 figure(3)
 hold off
-plot(t,y13(:,3) - y0(3)), title('Step change in Cg+30% step change in blue, -30% step change in red')
+plot(t,y13(:,3)), title('Step change in Cg+30% step change in blue, -30% step change in red')
 hold on
-plot(t,y07(:,3) - y0(3))
+plot(t,y07(:,3))
 
 [t, y131] = ode45(@(t,y) conclinearODE13(t,y), timeperiod, y0);
 [t, y071] = ode45(@(t,y) conclinearODE07(t,y), timeperiod, y0);
