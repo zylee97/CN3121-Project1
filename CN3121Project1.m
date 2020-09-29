@@ -1,6 +1,6 @@
 function CN3121Project1
 
-%%b)
+%% (b)
 
 timeperiod = 0:0.1:200; y0 = [3.48603 0.716788 5.08040];
 
