@@ -1,7 +1,7 @@
 function CN3121Project1
 %% (a)
 
-%%let C m = x, Ce = z, Cg = y, for x+y->z
+%%let Cm = x, Ce = z, Cg = y, for x+y->z
 
 syms x y z
 
