@@ -4,7 +4,7 @@ function CN3121Project1
 
 timeperiod = 0:0.1:200; y0 = [3.48603 0.716788 5.08040];
 
-%+30%, -30% step change for Cgin for Cg
+%%+30%, -30% step change for Cgin for Cg
 [t, y13] = ode45(@(t,y) ConcODE13(t,y), timeperiod, y0);
 [t, y07] = ode45(@(t,y) ConcODE07(t,y), timeperiod, y0);
 
@@ -13,27 +13,27 @@ hold off
 plot(t,y13(:,1)), title('Step change in Cm+30% step change in blue, -30% step change in red')
 hold on
 plot(t,y07(:,1))
-
-figure(2)
-hold off
-plot(t,y13(:,2)), title('Step change in Ce+30% step change in blue, -30% step change in red')
-hold on
-plot(t,y07(:,2))
-
-figure(3)
-hold off
-plot(t,y13(:,3)), title('Step change in Cg+30% step change in blue, -30% step change in red')
-hold on
-plot(t,y07(:,3))
-
-% [t, y131] = ode45(@(t,y) conclinearODE13(t,y), timeperiod, y0);
-% [t, y071] = ode45(@(t,y) conclinearODE07(t,y), timeperiod, y0);
 % 
-% figure(1)
+% figure(2)
+% hold off
+% plot(t,y13(:,2)), title('Step change in Ce+30% step change in blue, -30% step change in red')
 % hold on
-% plot(t,y131(:,1)), title('step change linear, Cm')
+% plot(t,y07(:,2))
+
+% figure(3)
+% hold off
+% plot(t,y13(:,3)), title('Step change in Cg+30% step change in blue, -30% step change in red')
 % hold on
-% plot(t,y071(:,1))
+% plot(t,y07(:,3))
+
+[t, y131] = ode45(@(t,y) conclinearODE13(t,y), timeperiod, y0);
+[t, y071] = ode45(@(t,y) conclinearODE07(t,y), timeperiod, y0);
+
+figure(1)
+hold on
+plot(t,y131(:,1)), title('step change linear, Cm')
+hold on
+plot(t,y071(:,1))
 
 % figure(5)
 % hold off
