@@ -8,7 +8,8 @@ timeperiod = 0:0.1:200; y0 = [3.48603 0.716788 5.08040];
 [t, y13] = ode45(@(t,y) ConcODE13(t,y), timeperiod, y0);
 [t, y07] = ode45(@(t,y) ConcODE07(t,y), timeperiod, y0);
 
-figure (1)
+figure (1) %help
+
 hold off
 plot(t,y13(:,1)), title('Step change in Cm+30% step change in blue, -30% step change in red')
 hold on
