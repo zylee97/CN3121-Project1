@@ -93,7 +93,7 @@ plot(t, y13lind(:,1)-y0(1))
 plot(t, y07lind(:,1)-y0(1))
 
 %% (f)
-
+[t, y11] = ode45(@(t,y) ConcODE11(t,y), timeperiod, y0);
 
 end
 
@@ -141,4 +141,17 @@ dydt(3) = (Ke/n1*um*y0(3)/(Kg+y0(3))*exp(-Ke*y0(2))+Ke1/n2*ue*y0(3)/(Kg1+y0(3))*
         + (F/V)*(y(4)-y0(4));
 dydt(4) = 0;
 
+end
+
+function dy = ConcODE11(t,y)
+Ke=0.5; Ke1=2; Kg=1.03; Kg1=1.68; V=1000; F=50; Cgin=10; n1=1; n2=0.5; um=0.3; ue=0.2;
+
+Cm = y(1);
+Ce = y(2); 
+Cg = y(3);
+dCm = um*(Cg/(Kg+Cg))*exp(-Ke*Ce) - (F/V)*Cm;
+dCe = ue*(Cg/(Kg1+Cg))*exp(-Ke1*Ce) - (F/V)*Ce;
+dCg = -um*(Cg/(Kg+Cg))*exp(-Ke*Ce) - 2*ue*(Cg/(Kg1+Cg))*exp(-Ke1*Ce) + (F/V)*1.1*Cgin - (F/V)*Cg;
+
+dy = [dCm dCe dCg]';
 end
