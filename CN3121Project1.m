@@ -93,7 +93,9 @@ plot(t, y13lind(:,1)-y0(1))
 plot(t, y07lind(:,1)-y0(1))
 
 %% (f)
-[t, y11] = ode45(@(t,y) ConcODE11(t,y), timeperiod, y0);
+[t, y11] = ode45(@(t,y) ConcODE11(t,y), timeperiod, y0); %data set for step input +10%
+%the output variable values in y11 are compared to values obtained via
+%regression and empirical models in microsoft excel
 
 end
 
