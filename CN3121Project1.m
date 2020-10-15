@@ -24,53 +24,58 @@ Ke=0.5; Ke1=2; Kg=1.03; Kg1=1.68; V=1000; F=50; n1=1; n2=0.5; um=0.3; ue=0.2;
 
 figure (1) %help
 hold off
-plot(t,y13(:,1)-y0(1)), title("Change in Cm': +30% step in blue, -30% step in red"),...
+plot(t,y13(:,1)-y0(1)), title("Change in Cm'"),...
     xlabel("time"), ylabel("Cm'")
 hold on
 plot(t,y07(:,1)-y0(1))
+legend('+30% step input in Cgin', '-30% step input in Cgin')
 
 figure(2)
 hold off
-plot(t,y13(:,2)-y0(2)), title("Change in Ce': +30% step in blue, -30% step in red"),...
+plot(t,y13(:,2)-y0(2)), title("Change in Ce'"),...
     xlabel("time"), ylabel("Ce'")
 hold on
 plot(t,y07(:,2)-y0(2))
-% 
+legend('+30% step input in Cgin', '-30% step input in Cgin')
+
 figure(3)
 hold off
-plot(t,y13(:,3)-y0(3)), title("Change in Cg': +30% step in blue, -30% step in red"),...
+plot(t,y13(:,3)-y0(3)), title("Change in Cg'"),...
     xlabel("time"), ylabel("Cg'")
 hold on
 plot(t,y07(:,3)-y0(3))
-% 
+legend('+30% step input in Cgin', '-30% step input in Cgin')
 
 %% (c) 
 y0 = [3.48603 0.716788 5.08040 10];
 
 [t,y13lin] = ode45(@(t,y) ConcODElin(t,y,13), timeperiod, y0);
 [t,y07lin] = ode45(@(t,y) ConcODElin(t,y,7), timeperiod, y0);
-% 
-figure (4) %help
+
+figure (4)
 hold off
-plot(t, y13lin(:,1)-y0(1)), title("Linearized change in Cm': +30% blue, -30% red"),...
+plot(t, y13lin(:,1)-y0(1)), title("Linearized change in Cm'"),...
     xlabel("time"), ylabel("Cm'")
 hold on
 plot(t, y07lin(:,1)-y0(1))
-% 
-figure (5) %help
+legend('+30% step input in Cgin', '-30% step input in Cgin')
+
+figure (5)
 hold off
-plot(t, y13lin(:,2)-y0(2)), title("Linearized change in Ce': +30% blue, -30% red"),...
+plot(t, y13lin(:,2)-y0(2)), title("Linearized change in Ce'"),...
     xlabel("time"), ylabel("Ce'")
 hold on
 plot(t, y07lin(:,2)-y0(2))
+legend('+30% step input in Cgin', '-30% step input in Cgin')
 
-figure (6) %help
+figure (6)
 hold off
-plot(t, y13lin(:,3)-y0(3)), title("Linearized change in Cg': +30% blue, -30% red"),...
+plot(t, y13lin(:,3)-y0(3)), title("Linearized change in Cg'"),...
     xlabel("time"), ylabel("Cg'")
 hold on
 plot(t, y07lin(:,3)-y0(3))
-% 
+legend('+30% step input in Cgin', '-30% step input in Cgin')
+
 
 %% (d)
 tperiod = 0:0.001:40; y0 = [3.48603 0.716788 5.08040];
@@ -85,14 +90,18 @@ y0 = [3.48603 0.716788 5.08040 10];
 
 figure(7)
 hold off
-plot(t, y13d(:,1)-y0(1)), title("Output of Cm', non-linearised in blue/red, linearised in yellow/purple"),...
+plot(t, y13d(:,1)-y0(1)), title("Output of Cm', in nonlinearised and linearised forms"),...
     xlabel("time"), ylabel("Cm'")
 hold on
+
 plot(t, y07d(:,1)-y0(1))
 plot(t, y13lind(:,1)-y0(1))
 plot(t, y07lind(:,1)-y0(1))
-
+legend('nonlinearised +30% step input in Cgin', 'nonlinearised -30% step input in Cgin', 'linearised +30% step input in Cgin', 'linearised -30% step input in Cgin')
+ylim([-0.3 0.3])
 %% (f)
+
+y0 = [3.48603 0.716788 5.08040]
 [t, y11] = ode45(@(t,y) ConcODE11(t,y), timeperiod, y0); %data set for step input +10%
 %the output variable values in y11 are compared to values obtained via
 %regression and empirical models in microsoft excel
