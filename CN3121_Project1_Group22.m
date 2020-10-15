@@ -25,7 +25,7 @@ Ke=0.5; Ke1=2; Kg=1.03; Kg1=1.68; V=1000; F=50; n1=1; n2=0.5; um=0.3; ue=0.2;
 figure (1) %help
 hold off
 plot(t,y13(:,1)-y0(1)), title("Change in Cm'"),...
-    xlabel("time"), ylabel("Cm'")
+    xlabel("time / h"), ylabel("Cm'")
 hold on
 plot(t,y07(:,1)-y0(1))
 legend('+30% step input in Cgin', '-30% step input in Cgin')
@@ -33,7 +33,7 @@ legend('+30% step input in Cgin', '-30% step input in Cgin')
 figure(2)
 hold off
 plot(t,y13(:,2)-y0(2)), title("Change in Ce'"),...
-    xlabel("time"), ylabel("Ce'")
+    xlabel("time / h"), ylabel("Ce'")
 hold on
 plot(t,y07(:,2)-y0(2))
 legend('+30% step input in Cgin', '-30% step input in Cgin')
@@ -41,7 +41,7 @@ legend('+30% step input in Cgin', '-30% step input in Cgin')
 figure(3)
 hold off
 plot(t,y13(:,3)-y0(3)), title("Change in Cg'"),...
-    xlabel("time"), ylabel("Cg'")
+    xlabel("time / h"), ylabel("Cg'")
 hold on
 plot(t,y07(:,3)-y0(3))
 legend('+30% step input in Cgin', '-30% step input in Cgin')
@@ -55,7 +55,7 @@ y0 = [3.48603 0.716788 5.08040 10];
 figure (4)
 hold off
 plot(t, y13lin(:,1)-y0(1)), title("Linearized change in Cm'"),...
-    xlabel("time"), ylabel("Cm'")
+    xlabel("time / h"), ylabel("Cm'")
 hold on
 plot(t, y07lin(:,1)-y0(1))
 legend('+30% step input in Cgin', '-30% step input in Cgin')
@@ -63,7 +63,7 @@ legend('+30% step input in Cgin', '-30% step input in Cgin')
 figure (5)
 hold off
 plot(t, y13lin(:,2)-y0(2)), title("Linearized change in Ce'"),...
-    xlabel("time"), ylabel("Ce'")
+    xlabel("time / h"), ylabel("Ce'")
 hold on
 plot(t, y07lin(:,2)-y0(2))
 legend('+30% step input in Cgin', '-30% step input in Cgin')
@@ -71,7 +71,7 @@ legend('+30% step input in Cgin', '-30% step input in Cgin')
 figure (6)
 hold off
 plot(t, y13lin(:,3)-y0(3)), title("Linearized change in Cg'"),...
-    xlabel("time"), ylabel("Cg'")
+    xlabel("time / h"), ylabel("Cg'")
 hold on
 plot(t, y07lin(:,3)-y0(3))
 legend('+30% step input in Cgin', '-30% step input in Cgin')
@@ -91,7 +91,7 @@ y0 = [3.48603 0.716788 5.08040 10];
 figure(7)
 hold off
 plot(t, y13d(:,1)-y0(1)), title("Output of Cm', in nonlinearised and linearised forms"),...
-    xlabel("time"), ylabel("Cm'")
+    xlabel("time / h"), ylabel("Cm'")
 hold on
 
 plot(t, y07d(:,1)-y0(1))
