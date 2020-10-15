@@ -101,7 +101,7 @@ legend('nonlinearised +30% step input in Cgin', 'nonlinearised -30% step input i
 ylim([-0.3 0.3])
 %% (f)
 
-y0 = [3.48603 0.716788 5.08040]
+y0 = [3.48603 0.716788 5.08040];
 [t, y11] = ode45(@(t,y) ConcODE11(t,y), timeperiod, y0); %data set for step input +10%
 %the output variable values in y11 are compared to values obtained via
 %regression and empirical models in microsoft excel
