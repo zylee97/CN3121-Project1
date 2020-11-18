@@ -2,7 +2,7 @@ function CN3121PROJECT2
 
 K = 2; tau = 2.5; theta = 7;
 
-kCds = tau/K/theta; tauIds = 2.5;
+kCds = tau/K/theta; tauIds = tau;
 kCitae = (0.586/K)*(theta/2.5)^(-0.916); tauIitae = 2.5/(1.03-0.165*theta/tau);
 
 s=tf('s');
