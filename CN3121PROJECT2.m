@@ -17,7 +17,7 @@ bode(gOLds)
 margingOLds=[gmds,pmds,wcds,wgds];
 margingOLitae=[gmitae,pmitae,wcitae,wgitae];
 %% d)
-
+K = 2; tau = 2.5; theta = 7;
 flag = false;
 addK = 0.005; %for accuracy up to 2dp
 kOld = K;
@@ -47,7 +47,7 @@ end
 kMaxITAE = K;   
 
 %% e)
-
+K = 2; tau = 2.5; theta = 7;
 flag = false;
 addTheta = 0.005; %for accuracy up to 2dp
 thetaOld = theta;
